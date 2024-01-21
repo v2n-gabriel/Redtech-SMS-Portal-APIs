@@ -1,0 +1,28 @@
+* About to connect() to 127.0.0.1 port 9085 (#0)
+*   Trying 127.0.0.1... * connected
+* Connected to 127.0.0.1 (127.0.0.1) port 9085 (#0)
+> POST /v2nemail/api/v1/email HTTP/1.1
+Host: 127.0.0.1:9085
+Accept: */*
+Content-Type: application/json
+X-NewRelic-ID: VgYHUFdQDxABUVVQAgUOVlE=
+X-NewRelic-Transaction: PxQAUFdXDQMFVQRWAAZVUQEBFB8EBw8RVU4aVQkJAAcDUAgEBVYEAFNTB0NKQQgKBFRRBAEEFTs=
+Content-Length: 250
+
+< HTTP/1.1 200 OK
+< Expires: 0
+< Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+< X-XSS-Protection: 1; mode=block
+< Pragma: no-cache
+< X-Frame-Options: DENY
+< Date: Tue, 26 Sep 2023 12:51:21 GMT
+< Connection: keep-alive
+< Vary: Origin
+< Vary: Access-Control-Request-Method
+< Vary: Access-Control-Request-Headers
+< X-Content-Type-Options: nosniff
+< Transfer-Encoding: chunked
+< Content-Type: application/json
+< 
+* Connection #0 to host 127.0.0.1 left intact
+* Closing connection #0
