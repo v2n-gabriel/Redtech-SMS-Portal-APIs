@@ -2,7 +2,7 @@
 
 class Sms extends MY_Controller
 {
-    private $environment = ENV_DEV;
+    private $environment = ENV_PROD;
     private $session, $user;
     private $batchRepo, $smsRepo;
 

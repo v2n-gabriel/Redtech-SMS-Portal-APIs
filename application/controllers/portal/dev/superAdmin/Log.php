@@ -8,9 +8,9 @@ class Log extends MY_Controller
     function __construct()
     {
         parent::__construct();
-//        $headers = $this->getRequestHeaders(array("PORTAL_AUTH", "USER_AUTH"));
-//        $this->session = new PortalSession($this->environment);
-//        $this->session->checkSession($headers["PORTAL_AUTH"], USER_CATEGORY_SUPERADMIN, $headers["USER_AUTH"]);
+        $headers = $this->getRequestHeaders(array("PORTAL_AUTH", "USER_AUTH"));
+        $this->session = new PortalSession($this->environment);
+        $this->session->checkSession($headers["PORTAL_AUTH"], USER_CATEGORY_SUPERADMIN, $headers["USER_AUTH"]);
     }
 
     function sms(){

@@ -59,6 +59,7 @@ create table dev_batch(
                           batch_id   varchar(100),
                           title varchar(100),
                           sender_id varchar(100),
+                          status varchar(100) default 'sent',
                           message varchar(100),
                           scheduled_date varchar(100),
                           date_created timestamp default current_timestamp

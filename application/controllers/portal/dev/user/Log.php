@@ -20,8 +20,8 @@ class Log extends MY_Controller
         $search = isset($payload["search"]) ? $payload["search"] : false;
         $filter = isset($payload["filter"]) ? $payload["filter"] : false;
 
-        $selectable = array(COL_REQUEST_ID, COL_SENDER_ID, COL_RECEIVER, COL_MESSAGE, COL_PAGES, COL_STATUS);
-        $filterable = array(COL_STATUS => array("pending", "delivered", "deliveryFailed"));
+        $selectable = array(COL_REQUEST_ID, COL_SENDER_ID, COL_RECEIVER, COL_MESSAGE, COL_PAGES, COL_STATUS, COL_BATCH_ID);
+        $filterable = array(COL_STATUS => array("pending", "delivered", "deliveryFailed"), COL_BATCH_ID => FILTER_API_DRIVEN);
 
         $fetcher = new LogFetcher($this->environment, TABLE_SMS);
         $logs = $fetcher->fetch($selectable, array(COL_USER_ID => $this->session->userId), $payload["page"], $payload["pageSize"], $filter, $filterable, $search, $start_date, $end_date);
