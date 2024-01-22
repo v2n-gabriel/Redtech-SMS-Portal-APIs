@@ -42,6 +42,7 @@ create table dev_sms
     unique_id    varchar(100) unique,
     user_id      varchar(100),
     request_id   varchar(100),
+    batch_id   varchar(100),
     sender_id    varchar(100),
     receiver     varchar(100),
     message      varchar(100),
@@ -51,6 +52,17 @@ create table dev_sms
     dlr_time     timestamp,
     dlr_status   varchar(100) default 'pending'
 );
+
+create table dev_batch(
+                          unique_id    varchar(100) unique,
+                          user_id      varchar(100),
+                          batch_id   varchar(100),
+                          title varchar(100),
+                          sender_id varchar(100),
+                          message varchar(100),
+                          scheduled_date varchar(100),
+                          date_created timestamp default current_timestamp
+)
 
 
 create table dev_email

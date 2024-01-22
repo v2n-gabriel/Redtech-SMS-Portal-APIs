@@ -37,3 +37,7 @@ $route["portal/(:any)/(:any)/log/(:any)"]["get"] = "portal/$1/$2/log/$3";
 $route["portal/(:any)/(:any)/logCount"]["get"] = "portal/$1/$2/logCount/index";
 $route["portal/(:any)/(:any)/profile/getDetails"]["get"] = "portal/$1/$2/profile/getDetails";
 
+
+//batch sms pushing from the portal
+$route["portal/(:any)/(:any)/sms/(:any)"]["post"] = "portal/$1/$2/sms/$3";
+

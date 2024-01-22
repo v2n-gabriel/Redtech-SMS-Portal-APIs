@@ -96,6 +96,7 @@ defined("TABLE_USER_CATEGORY") or define("TABLE_USER_CATEGORY", "user_category")
 defined("TABLE_USER") or define("TABLE_USER", "user");
 defined("TABLE_SESSION") or define("TABLE_SESSION", "session");
 defined("TABLE_SMS") or define("TABLE_SMS", "sms");
+defined("TABLE_BATCH") or define("TABLE_BATCH", "batch");
 defined("TABLE_EMAIL") or define("TABLE_EMAIL", "email");
 defined("TABLE_USER_BILLER") or define("TABLE_USER_BILLER", "user_biller");
 
@@ -147,7 +148,9 @@ defined("COL_SUBJECT") or define("COL_SUBJECT", "subject");
 defined("COL_SESSION_ID") or define("COL_SESSION_ID", "session_id");
 defined("COL_DATE_MODIFIED") or define("COL_DATE_MODIFIED", "date_modified");
 defined("COL_DATE_CREATED") or define("COL_DATE_CREATED", "date_created");
-
+defined("COL_BATCH_ID") or define("COL_BATCH_ID", "batch_id");
+defined("COL_TITLE") or define("COL_TITLE", "title");
+defined("COL_SCHEDULED_DATE") or define("COL_SCHEDULED_DATE", "scheduled_date");
 
 
 defined("CATEGORY_USER") or define("CATEGORY_USER", "User");
