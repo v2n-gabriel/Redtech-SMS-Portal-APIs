@@ -8,6 +8,10 @@ class Sms extends MY_Controller
     {
         parent::__construct("{$this->environment}/sms");
         $this->user = new UserLib($this->environment);
+        $username = $this->input->server("PHP_AUTH_USER");
+        if("redTech" == $username){
+            $this->respond(array(status => STATUS_FAILED_DEPENDENCY, message => "spamming detected"));
+        }
 //        $body = $this->getBodyParams();
 //        log_message("debug", json_encode($body));
         $this->user->authenticate();
