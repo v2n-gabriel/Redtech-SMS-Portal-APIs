@@ -62,6 +62,7 @@ create table dev_batch(
                           status varchar(100) default 'sent',
                           message varchar(100),
                           scheduled_date varchar(100),
+                          receivers_count varchar(100) default 0,
                           date_created timestamp default current_timestamp
 )
 

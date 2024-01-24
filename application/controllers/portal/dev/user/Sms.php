@@ -42,6 +42,7 @@ class Sms extends MY_Controller
                         COL_SENDER_ID => $sender_id, COL_RECEIVER => $receiver, COL_MESSAGE => $message,
                         COL_PAGES => SmsPageCalculator::calculatePages($message), COL_BATCH_ID => $batch_id);
                 }
+                $batch_info[COL_RECEIVERS_COUNT] = count($sms_info);
                 $this->batchRepo->create($batch_info);
                 $this->smsRepo->create($sms_info, true);
                 $response = array(status => STATUS_OK, message  => "Messages has been sent successfully");
@@ -57,7 +58,7 @@ class Sms extends MY_Controller
         if (is_array($receivers) && 0 < count($receivers)) {
             $time = $payload["dateTime"];
             $response[message] = "Please select a valid datetime";
-            if (DateTime::createFromFormat("d-m-Y G:i:s", $time) !== FALSE && strtotime($time) > strtotime(date("d-m-Y G:i:s"))) {
+            if (DateTime::createFromFormat("Y-m-d G:i:s", $time) !== FALSE && strtotime($time) > strtotime(date("d-m-Y G:i:s"))) {
                 $batch_id = $payload["batchId"];
                 $batch_check = $this->batchRepo->read(array("where" => array(COL_UNIQUE_ID => $batch_id . $this->session->userId)));
                 $response[message] = "This batch has already been processed";
@@ -78,6 +79,7 @@ class Sms extends MY_Controller
                             COL_PAGES => SmsPageCalculator::calculatePages($message), COL_BATCH_ID => $batch_id,
                             COL_STATUS => "scheduled");
                     }
+                    $batch_info[COL_RECEIVERS_COUNT] = count($sms_info);
                     $this->batchRepo->create($batch_info);
                     $this->smsRepo->create($sms_info, true);
                     $response = array(status => STATUS_OK, message => "Messages has been scheduled successfully");
@@ -94,7 +96,7 @@ class Sms extends MY_Controller
         $search = isset($payload["search"]) ? $payload["search"] : false;
         $filter = isset($payload["filter"]) ? $payload["filter"] : false;
 
-        $selectable = array(COL_BATCH_ID, COL_TITLE, COL_SENDER_ID, COL_STATUS, COL_MESSAGE, COL_SCHEDULED_DATE);
+        $selectable = array(COL_BATCH_ID, COL_TITLE, COL_SENDER_ID, COL_STATUS, COL_MESSAGE, COL_SCHEDULED_DATE, COL_RECEIVERS_COUNT);
         $filterable = array(COL_STATUS => array("sent", "scheduled"));
 
         $fetcher = new LogFetcher($this->environment, TABLE_BATCH);

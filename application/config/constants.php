@@ -151,6 +151,7 @@ defined("COL_DATE_CREATED") or define("COL_DATE_CREATED", "date_created");
 defined("COL_BATCH_ID") or define("COL_BATCH_ID", "batch_id");
 defined("COL_TITLE") or define("COL_TITLE", "title");
 defined("COL_SCHEDULED_DATE") or define("COL_SCHEDULED_DATE", "scheduled_date");
+defined("COL_RECEIVERS_COUNT") or define("COL_RECEIVERS_COUNT", "receivers_count");
 
 
 defined("CATEGORY_USER") or define("CATEGORY_USER", "User");
